@@ -1,0 +1,21 @@
+const { Telegraf, Markup } = require('telegraf');
+const fs = require('fs');
+const mongoose = require('mongoose');
+require('dotenv').config();
+
+const bot = new Telegraf(process.env.BOT_TOKEN);
+mongoose.connect(process.env.databaseURL, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connection.on('connected', () => {
+  console.log('[✅ DataBase] Connected!')
+});
+['command','events', 'actions'].forEach(handler=> {
+    require(`./src/handlers/${handler}`)(bot);
+});
+
+bot.telegram.setMyCommands([
+    {command: '/start', description: 'Стартовое сообщение'},
+])
+bot.launch().then(() => console.log('[✅ BOT] Connected!'));
+// Enable graceful stop
+process.once('SIGINT', () => bot.stop('SIGINT'));
+process.once('SIGTERM', () => bot.stop('SIGTERM'));
