@@ -7,9 +7,9 @@ module.exports = async (bot,ctx) => {
     await ctx.deleteMessage()
     User.findOne({ID: ctx.update.callback_query.from.id}, (err,user) => {
         if(user.language == 'UA') {
-            ctx.reply('Щось відповідаємо', Markup.inlineKeyboard(menuModel.ukrainianMenu))
+            ctx.reply(words.UkrainianAnswers.animals, Markup.inlineKeyboard(menuModel.ukrainianMenu))
         } else {
-            ctx.reply('Что-то отвечаем', Markup.inlineKeyboard(menuModel.russianMenu))
+            ctx.reply(words.RussianAnswers.animals, Markup.inlineKeyboard(menuModel.russianMenu))
         }
     })
 }

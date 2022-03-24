@@ -8,6 +8,14 @@ mongoose.connect(process.env.databaseURL, { useNewUrlParser: true, useUnifiedTop
 mongoose.connection.on('connected', () => {
   console.log('[✅ DataBase] Connected!')
 });
+mongoose.connection.on('error', () => {
+  console.log('[❌ DataBase] Error Connection!')
+});
+mongoose.connection.on('disconnected', () => {
+  console.log('[❌ DataBase] Disconnected!')
+});
+
+
 ['command','events', 'actions'].forEach(handler=> {
     require(`./src/handlers/${handler}`)(bot);
 });
