@@ -32,11 +32,11 @@ module.exports = async (bot,ctx) => {
         if(user.languageSelected) {
             if(user.language == 'RU') {
                 ctx.reply(`Выберите что вам нужно`, Markup.keyboard([
-                    [Markup.button.text(words.RussianButtons.help), Markup.button.text(words.RussianButtons.teh)]
+                    [Markup.button.text(words.RussianButtons.help), Markup.button.text(words.RussianButtons.tehSupport)]
                 ]))
             } else {
                 ctx.reply(`Оберіть що вам потрібно`, Markup.keyboard([
-                    [Markup.button.text(words.UkrainianButtons.help), Markup.button.text(words.UkrainianButtons.teh)]
+                    [Markup.button.text(words.UkrainianButtons.help), Markup.button.text(words.UkrainianButtons.tehSupport)]
                 ]))
             }
         } else {

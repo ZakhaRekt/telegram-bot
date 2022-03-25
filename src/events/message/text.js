@@ -33,7 +33,7 @@ module.exports = async(bot, ctx) => {
                 user.languageSelected = true;
                 user.save();
                 return ctx.reply('Язык установлен', Markup.keyboard([
-                    [Markup.button.text(words.RussianButtons.help), Markup.button.text(words.RussianButtons.teh)]
+                    [Markup.button.text(words.RussianButtons.help), Markup.button.text(words.RussianButtons.tehSupport)]
                 ]))
             }
             if (text == 'UA') {
@@ -41,7 +41,7 @@ module.exports = async(bot, ctx) => {
                 user.languageSelected = true;
                 user.save();
                 return ctx.reply('Мову встановлено!', Markup.keyboard([
-                    [Markup.button.text(words.UkrainianButtons.help), Markup.button.text(words.UkrainianButtons.teh)]
+                    [Markup.button.text(words.UkrainianButtons.help), Markup.button.text(words.UkrainianButtons.tehSupport)]
                 ]))
             }
 
@@ -57,16 +57,16 @@ module.exports = async(bot, ctx) => {
                 if (words.UkrainianButtons.help == text) {
                     ctx.reply('🎈Список питань', Markup.inlineKeyboard(menuModel.ukrainianMenu).oneTime(true))
                 }
-                if(words.UkrainianButtons.teh == text) {
-                    return ctx.reply(words.UkrainianAnswers.teh)
+                if(words.UkrainianButtons.tehSupport == text) {
+                    return ctx.reply(words.UkrainianAnswers.tehSupport)
                 }
             }
             else {
                 if (words.RussianButtons.help == text) {
                     ctx.reply('🎈Список вопросов', Markup.inlineKeyboard(menuModel.russianMenu).oneTime(true)).catch(err => console.log(err))
                 }
-                if(words.RussianButtons.teh == text) {
-                    return ctx.reply(words.RussianAnswers.teh)
+                if(words.RussianButtons.tehSupport == text) {
+                    return ctx.reply(words.RussianAnswers.tehSupport)
                 }
             }
             user.save();
