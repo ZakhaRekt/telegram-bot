@@ -2,6 +2,7 @@ const words = require('./words');
 const {Markup} = require('telegraf');
 module.exports = Object.freeze({
     ukrainianMenu: [
+        [Markup.button.callback(words.UkrainianButtons.instruction,'instruction')],
         [Markup.button.callback(words.UkrainianButtons.homeDoc,'homeDoc')],
         [Markup.button.callback(words.UkrainianButtons.home, 'home')],
         [Markup.button.callback(words.UkrainianButtons.school, 'school')],
@@ -17,6 +18,7 @@ module.exports = Object.freeze({
         [Markup.button.callback('Изменить язык', 'changeLanguage')]
     ],
     russianMenu: [
+        [Markup.button.callback(words.RussianAnswers.instruction,'instruction')],
         [Markup.button.callback(words.RussianButtons.homeDoc,'homeDoc')],
         [Markup.button.callback(words.RussianButtons.home, 'home')],
         [Markup.button.callback(words.RussianButtons.school, 'school')],
