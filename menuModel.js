@@ -14,6 +14,7 @@ module.exports = Object.freeze({
         [Markup.button.callback(words.UkrainianButtons.animals, 'animals')], 
         [Markup.button.callback(words.UkrainianButtons.family, 'family')],
         [Markup.button.callback(words.UkrainianButtons.helpCenter, 'helpCenter')],
+        [Markup.button.callback(words.UkrainianButtons.helpTochini, 'helpTechini')],
         [Markup.button.callback(words.UkrainianButtons.tehSupport, 'tehSupport')],
         [Markup.button.callback('Изменить язык', 'changeLanguage')]
     ],
@@ -30,6 +31,7 @@ module.exports = Object.freeze({
         [Markup.button.callback(words.RussianButtons.animals, 'animals')], 
         [Markup.button.callback(words.RussianButtons.family, 'family')],
         [Markup.button.callback(words.RussianButtons.helpCenter, 'helpCenter')],
+        [Markup.button.callback(words.RussianButtons.helpTochini, 'helpTechini')],
         [Markup.button.callback(words.RussianButtons.tehSupport, 'tehSupport')],
         [Markup.button.callback('Змінити мову', 'changeLanguage')]
     ]
