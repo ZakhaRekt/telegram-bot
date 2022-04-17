@@ -26,7 +26,8 @@ module.exports = {
     isAdmin: function(userID) {
         const admins = [
             '634597191',
-            '1552571014'
+            '1552571014',
+            '78321312'
         ]
         if(!admins.includes(`${userID}`)) {
             return false;
